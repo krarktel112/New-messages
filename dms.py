@@ -32,4 +32,5 @@ async def on_message(message):
         else:
             print("Alert channel not found. Please provide a valid channel ID.")
 
+TOKEN = input("Token:")
 bot.run(TOKEN)
