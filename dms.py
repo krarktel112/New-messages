@@ -44,16 +44,16 @@ print(">>Login Complete!")
 
 time.sleep(10)
 
-driver.get(channelURL)
+#driver.get(channelURL)
 
-print(">Opening The Server Link...")
+#print(">Opening The Server Link...")
 
-time.sleep(5)
+#time.sleep(5)
 
 # Msg Sending
 
-msgoutput = driver.find_element("xpath", //ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')
+#msgoutput = driver.find_element("xpath", //ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')
 
-print("last message is")
+#print("last message is")
 
-print(msgoutput)
+#print(msgoutput)
