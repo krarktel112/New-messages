@@ -11,7 +11,7 @@ options.add_argument("--headless=new")
 driver = webdriver.Chrome(options=options)
 driver.get("https://www.google.com")
 
-driver.get("https://discord.com/login")
+#driver.get("https://discord.com/login")
 
 time.sleep(6)
 
