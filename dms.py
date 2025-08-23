@@ -61,9 +61,8 @@ time.sleep(10)
 #time.sleep(5)
 
 # Msg Sending
-msg = (//ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent'))
-#msgoutput = driver.find_element(by = By.XPATH, value = //ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')
-
+msg = """//ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')"""
+msgoutput = driver.find_element(by = By.XPATH, value = msg)
 #print("last message is")
 
 #print(msgoutput)
