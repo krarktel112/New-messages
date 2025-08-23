@@ -1,11 +1,7 @@
 import time
-
 from selenium import webdriver
-
 from selenium.webdriver.common.keys import Keys
-
 from selenium.webdriver.support.ui import Select
-
 import os, shutil
 
 driver = webdriver.Chrome()
@@ -18,9 +14,9 @@ time.sleep(6)
 
 # Enter your account details here 
 
-username = ''
+username = "krarktel@yahoo.com"
 
-password = ''
+password = "04hp9004"
 
 # Copy the URL of channel where you wanna send messages and paste below
 
@@ -42,9 +38,7 @@ password_input.send_keys(password)
 
 # Initialize and login
 
-login_button = 
-
-login_button.click()
+login_button = login_button.click()
 
 print(">>Login Complete!")
 
@@ -58,7 +52,7 @@ time.sleep(5)
 
 # Msg Sending
 
-msgoutput = # I can't find last message's xpath
+msgoutput = ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')
 
 print("last message is")
 
