@@ -4,11 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import os, shutil
 
-options = webdriver.ChromeOptions()
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--headless=new")
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome()
 
 driver.get("https://discord.com/login")
 
@@ -46,3 +42,18 @@ login_button = login_button.click()
 
 print(">>Login Complete!")
 
+time.sleep(10)
+
+driver.get(channelURL)
+
+print(">Opening The Server Link...")
+
+time.sleep(5)
+
+# Msg Sending
+
+msgoutput = driver.find_element("xpath", //ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')
+
+print("last message is")
+
+print(msgoutput)
