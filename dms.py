@@ -6,11 +6,8 @@ import os, shutil
 options = webdriver.FirefoxOptions()
 options.add_argument("--headless")
 driver = webdriver.Firefox(options=options)
-driver.get("https://www.google.com")
-driver.save_screenshot("/sdcard/download/screenshot.png")
-driver.quit()
-#driver.get("https://discord.com/login")
-
+#driver.get("https://www.google.com")
+driver.get("https://discord.com/login")
 time.sleep(6)
 
 #--------------- Edit Here -------------------------------------------------------------
@@ -29,7 +26,7 @@ channelURL = "https://discord.com/channels/775349757060186142/775356560211442893
 
 # Initialize and input email
 
-username_input = driver.find_element_by_name('email')
+username_input = driver.find_element(By.Name,'email')
 
 username_input.send_keys(username)
 
