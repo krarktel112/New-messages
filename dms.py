@@ -3,14 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import os, shutil
-from selenium import webdriver
-options = webdriver.ChromeOptions()
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--headless=new")
-driver = webdriver.Chrome(options=options)
+options = webdriver.FirefoxOptions()
+options.add_argument("--headless")
+driver = webdriver.Firefox(options=options)
 driver.get("https://www.google.com")
-
+driver.save_screenshot("/sdcard/download/screenshot.png")
+driver.quit()
 #driver.get("https://discord.com/login")
 
 time.sleep(6)
