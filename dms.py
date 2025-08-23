@@ -3,8 +3,13 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import os, shutil
-
-driver = webdriver.Chrome()
+from selenium import webdriver
+options = webdriver.ChromeOptions()
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--headless=new")
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.google.com")
 
 driver.get("https://discord.com/login")
 
