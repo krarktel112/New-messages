@@ -1,6 +1,7 @@
 from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+import time 
 from time import sleep
 from bs4 import BeautifulSoup
 import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl, selenium
