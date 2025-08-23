@@ -1,36 +1,65 @@
-import discord
+import time
 
-# Replace with your bot's token
-TOKEN = "YOUR_BOT_TOKEN" 
+from selenium import webdriver
 
-# Enable necessary intents (including message content for reading messages)
-intents = discord.Intents.default()
-intents.message_content = True  # You need this to read message content
+from selenium.webdriver.common.keys import Keys
 
-# Initialize the bot
-bot = discord.Client(intents=intents) 
+from selenium.webdriver.support.ui import Select
 
-@bot.event
-async def on_ready():
-    print(f'Bot connected as {bot.user}')
+import os, shutil
 
-@bot.event
-async def on_message(message):
-    # Ignore messages sent by the bot itself
-    if message.author == bot.user:
-        return
+driver = webdriver.Chrome()
 
-    # Check if the message is a DM
-    if isinstance(message.channel, discord.DMChannel):  
-        print(f"New DM from {message.author}: {message.content}")
+driver.get("https://discord.com/login")
 
-        # Send an alert (e.g., to a specific channel)
-        # Replace 'YOUR_ALERT_CHANNEL_ID' with the ID of the channel where you want alerts
-        alert_channel = bot.get_channel(YOUR_ALERT_CHANNEL_ID) 
-        if alert_channel:
-            await alert_channel.send(f"New DM from {message.author}: {message.content}") 
-        else:
-            print("Alert channel not found. Please provide a valid channel ID.")
+time.sleep(6)
 
-TOKEN = input("Token:")
-bot.run(TOKEN)
+#--------------- Edit Here -------------------------------------------------------------
+
+# Enter your account details here 
+
+username = ''
+
+password = ''
+
+# Copy the URL of channel where you wanna send messages and paste below
+
+channelURL = "https://discord.com/channels/775349757060186142/77535656021144289331"
+
+#-------------- Edit End ----------------------------------------------------------------
+
+# Initialize and input email
+
+username_input = driver.find_element_by_name('email')
+
+username_input.send_keys(username)
+
+# Initialize and input password
+
+password_input = driver.find_element_by_name('password')
+
+password_input.send_keys(password)
+
+# Initialize and login
+
+login_button = 
+
+login_button.click()
+
+print(">>Login Complete!")
+
+time.sleep(10)
+
+driver.get(channelURL)
+
+print(">Opening The Server Link...")
+
+time.sleep(5)
+
+# Msg Sending
+
+msgoutput = # I can't find last message's xpath
+
+print("last message is")
+
+print(msgoutput)
