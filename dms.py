@@ -32,13 +32,12 @@ username_input.send_keys(username)
 
 # Initialize and input password
 
-password_input = driver.find_element_by_name('password')
+password_input = driver.find_element(by = By.NAME, value= 'password')
 
 password_input.send_keys(password)
+password_input.submit()
 
 # Initialize and login
-
-login_button = login_button.click()
 
 print(">>Login Complete!")
 
@@ -52,7 +51,7 @@ time.sleep(10)
 
 # Msg Sending
 
-#msgoutput = driver.find_element("xpath", //ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')
+#msgoutput = driver.find_element(by = By.XPATH, value = //ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')
 
 #print("last message is")
 
