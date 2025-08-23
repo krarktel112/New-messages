@@ -37,13 +37,13 @@ channelURL = "https://discord.com/channels/775349757060186142/775356560211442893
 
 # Initialize and input email
 
-username_input = driver.find_element(by = By.NAME, value = 'email')
+username_input = driver.find_element(by = By.NAME, value = "email")
 
 username_input.send_keys(username)
 
 # Initialize and input password
 
-password_input = driver.find_element(by = By.NAME, value= 'password')
+password_input = driver.find_element(by = By.NAME, value= "password")
 
 password_input.send_keys(password)
 password_input.submit()
