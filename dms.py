@@ -68,3 +68,4 @@ def get_last_message(driver):
     return last_message_element.text
     #except Exception:
         #return None
+print("Last DM message:", last_message_element.text)
