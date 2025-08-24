@@ -56,10 +56,12 @@ time.sleep(10)
 
 print(">Opening link")
 driver.get(channelURL)
+driver.save_screenshot("fail1.png")
 # Function to get the last message
 def get_last_message(driver):
     try:
         # XPath to find the last message content (adjust based on Discord's current HTML)
+        driver.save_screenshot("fail2.png")
         last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
         time.sleep(5)
         last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
