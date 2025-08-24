@@ -72,9 +72,7 @@ def get_last_message(driver):
     try:
         # XPath to find the last message content (adjust based on Discord's current HTML)
         last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
-        last_message_element = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, last_message_xpath))
-        )
+        last_message_element = driver.find_element((by = By.XPATH, value = last_message_xpath))
         return last_message_element.text
     except Exception:
         return None
