@@ -61,15 +61,15 @@ print(">Opening The Server Link...")
 time.sleep(5)
 
 def get_last_message(driver):
-    try:
+    #try:
         # XPath to find the last message content (adjust based on Discord's current HTML)
-        last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
-        last_message_element = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, last_message_xpath))
-        )
-        return last_message_element.text
-    except Exception:
-        return None
+    last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
+    last_message_element = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.XPATH, last_message_xpath))
+    )
+    return last_message_element.text
+    #except Exception:
+        #return None
 
 last_known_message = get_last_message(driver)
 print(f"Initial last message: {last_known_message}")
