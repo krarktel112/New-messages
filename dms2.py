@@ -55,7 +55,7 @@ print(">>Login Complete!")
 time.sleep(10)
 
 print(">Opening link")
-
+driver.get(channelURL)
 # Function to get the last message
 def get_last_message(driver):
     try:
