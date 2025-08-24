@@ -58,12 +58,13 @@ driver.get(channelURL)
 
 print(">Opening The Server Link...")
 
-time.sleep(5)
-try:
-    # This XPath locates the message content div of the last list item
+def get_last_message(driver):
+    #try:
+        # XPath to find the last message content (adjust based on Discord's current HTML)
+    time.sleep(5)
     last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
-    last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
+    last_message_element = last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
     print("Last DM message:", last_message_element.text)
-except Exception as e:
-    print("Could not find the last message element. The XPath may be outdated.")
-    print(e)
+    return last_message_element.text
+    #except Exception:
+        #return None
