@@ -58,11 +58,12 @@ driver.get(channelURL)
 
 print(">Opening The Server Link...")
 
-#time.sleep(5)
-
-# Msg Sending
-msg = """//ol[@data-list-id="chat-messages"]/li[last()]//div[contains(@class,'messageContent')"""
-msgoutput = driver.find_element(by = By.XPATH, value = msg)
-#print("last message is")
-
-#print(msgoutput)
+time.sleep(5)
+try:
+    # This XPath locates the message content div of the last list item
+    last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
+    last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
+    print("Last DM message:", last_message_element.text)
+except Exception as e:
+    print("Could not find the last message element. The XPath may be outdated.")
+    print(e)
