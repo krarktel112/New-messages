@@ -54,25 +54,15 @@ print(">>Login Complete!")
 
 time.sleep(10)
 
-driver.get(channelURL)
-
 print(">Opening link")
-try:
-    channel_element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'channelName') and text()='your-channel-name']"))
-    )
-    channel_element.click()
-except Exception as e:
-    print(f"Could not find or click the channel: {e}")
-    driver.quit()
-    exit()
 
 # Function to get the last message
 def get_last_message(driver):
     try:
         # XPath to find the last message content (adjust based on Discord's current HTML)
         last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
-        last_message_element = driver.find_element((by = By.XPATH, value = last_message_xpath))
+        time.sleep(5)
+        last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
         return last_message_element.text
     except Exception:
         return None
