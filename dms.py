@@ -31,7 +31,7 @@ password = "04hp9004"
 
 # Copy the URL of channel where you wanna send messages and paste below
 
-channelURL = "https://discord.com/channels/775349757060186142/77535656021144289331"
+channelURL = "https://discord.com/channels/@me/1385695239330725920"
 
 #-------------- Edit End ----------------------------------------------------------------
 
@@ -54,9 +54,9 @@ print(">>Login Complete!")
 
 time.sleep(10)
 
-#driver.get(channelURL)
+driver.get(channelURL)
 
-#print(">Opening The Server Link...")
+print(">Opening The Server Link...")
 
 #time.sleep(5)
 
