@@ -1,19 +1,62 @@
-from selenium import webdriver
+from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
+from selenium import webdriver
+import time 
+from time import sleep
+from bs4 import BeautifulSoup
+import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl, selenium
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from selenium.webdriver.firefox.options import Options
+import logging
+import selenium.webdriver
+import selenium.webdriver.firefox.service
 
-# Initialize WebDriver (replace with your WebDriver path)
-driver = webdriver.Chrome()
+options = webdriver.FirefoxOptions()
+options.add_argument("--headless")
+driver = webdriver.Firefox(options=options)
+#driver.get("https://www.google.com")
+driver.get("https://discord.com/login")
+time.sleep(6)
 
-# Navigate to Discord (and handle login if not already logged in)
-driver.get("https://discord.com/login") 
-# ... (add login automation here if needed)
+#--------------- Edit Here -------------------------------------------------------------
 
-# Navigate to a specific channel (replace with actual channel element locator)
-# Example: locating a channel by its name in a specific server
-# You'll need to inspect Discord's HTML to find the correct locators for your setup
+# Enter your account details here 
+
+username = "krarktel@yahoo.com"
+
+password = "04hp9004"
+
+# Copy the URL of channel where you wanna send messages and paste below
+
+channelURL = "https://discord.com/channels/@me/1385695239330725920"
+
+#-------------- Edit End ----------------------------------------------------------------
+
+# Initialize and input email
+
+username_input = driver.find_element(by = By.NAME, value = "email")
+
+username_input.send_keys(username)
+
+# Initialize and input password
+
+password_input = driver.find_element(by = By.NAME, value= "password")
+
+password_input.send_keys(password)
+password_input.submit()
+
+# Initialize and login
+
+print(">>Login Complete!")
+
+time.sleep(10)
+
+driver.get(channelURL)
+
+print(">Opening link")
 try:
     channel_element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'channelName') and text()='your-channel-name']"))
