@@ -64,8 +64,8 @@ def get_last_message(driver):
     time.sleep(5)
     last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
     last_message_element = last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
-    print("Last DM message:", last_message_element.text)
-    return last_message_element.text
+    x = last_message_element.text)
+    return x
     #except Exception:
         #return None
-print("Last DM message:", last_message_element.text)
+print("Last DM message:", x)
