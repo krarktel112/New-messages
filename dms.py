@@ -54,18 +54,32 @@ print(">>Login Complete!")
 
 time.sleep(10)
 
+print(">Opening link")
 driver.get(channelURL)
-
-print(">Opening The Server Link...")
-
+driver.save_screenshot("/data/data/com.termux/files/home/storage/pictures/fail1.png")
+# Function to get the last message
 def get_last_message(driver):
-    #try:
+    try:
         # XPath to find the last message content (adjust based on Discord's current HTML)
-    time.sleep(5)
-    last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
-    last_message_element = last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
-    x = last_message_element.text
-    print("Last DM message:", x)
-    return x
-    #except Exception:
-        #return None
+        driver.save_screenshot("/data/data/com.termux/files/home/storage/pictures/fail2.png")
+        last_message_xpath = "//ol[@data-list-id='chat-messages']/li[last()]//div[contains(@class,'messageContent')]"
+        time.sleep(5)
+        last_message_element = driver.find_element(by = By.XPATH, value = last_message_xpath)
+        return last_message_element.text
+    except Exception:
+        return None
+
+last_known_message = get_last_message(driver)
+print(f"Initial last message: {last_known_message}")
+
+while True:
+    time.sleep(5)  # Check for new messages every 5 seconds
+    current_last_message = get_last_message(driver)
+
+    if current_last_message and current_last_message != last_known_message:
+        print(f"New message detected: {current_last_message}")
+        last_known_message = current_last_message
+    else:
+        print("No new messages.")
+
+driver.quit()
