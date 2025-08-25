@@ -79,6 +79,6 @@ while True:
         print(f"New message detected: {current_last_message}")
         last_known_message = current_last_message
     else:
-        print("No new messages.")
+        print("No new messages.", end='\r')
 
 driver.quit()
