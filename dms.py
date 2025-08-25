@@ -78,6 +78,7 @@ while True:
     if current_last_message and current_last_message != last_known_message:
         print(f"New message detected: {current_last_message}")
         last_known_message = current_last_message
+        os.system("python Messages.py 2603417581 verizon Dm")
     else:
         print("No new messages.", end='\r')
 
