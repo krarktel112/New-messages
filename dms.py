@@ -13,6 +13,10 @@ from selenium.webdriver.firefox.options import Options
 import logging
 import selenium.webdriver
 import selenium.webdriver.firefox.service
+from wakeonlan import send_magic_packet
+
+# Replace with the actual MAC address of your target computer
+mac_address = "XX:XX:XX:XX:XX:XX" 
 
 options = webdriver.FirefoxOptions()
 options.add_argument("--headless")
@@ -79,6 +83,7 @@ while True:
         print(f"New message detected: {current_last_message}")
         last_known_message = current_last_message
         os.system("python3 Messages.py 2603417581 verizon Dm")
+        send_magic_packet(mac_address)
     else:
         print("No new messages.", end='\r')
 
