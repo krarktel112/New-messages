@@ -18,10 +18,10 @@ from wakeonlan import send_magic_packet
 # Replace with the actual MAC address of your target computer
 mac_address = "XX:XX:XX:XX:XX:XX" 
 
-options = webdriver.FirefoxOptions()
+options = Options()
 options.add_argument("--headless")
-driver = webdriver.Firefox(options=options)
-#driver.get("https://www.google.com")
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(options=options)
 driver.get("https://discord.com/login")
 time.sleep(6)
 
@@ -29,7 +29,7 @@ time.sleep(6)
 
 # Enter your account details here 
 
-username = "krarktel@yahoo.com"
+username = "krarktel@gmail.com"
 
 password = "04hp9004"
 
