@@ -29,13 +29,13 @@ time.sleep(6)
 
 # Enter your account details here 
 
-username = "krarktel@gmail.com"
+username = "krarktel@yahoo.com"
 
 password = "04hp9004"
 
 # Copy the URL of channel where you wanna send messages and paste below
 
-channelURL = "https://discord.com/channels/@me/1385695239330725920"
+channelURL = "https://discord.com/channels/@me/1228462092370317425"
 
 #-------------- Edit End ----------------------------------------------------------------
 
