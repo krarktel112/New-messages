@@ -13,7 +13,6 @@ from selenium.webdriver.firefox.options import Options
 import logging
 import selenium.webdriver
 import selenium.webdriver.firefox.service
-from wakeonlan import send_magic_packet
 
 # Replace with the actual MAC address of your target computer
 mac_address = "XX:XX:XX:XX:XX:XX" 
