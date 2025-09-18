@@ -14,13 +14,9 @@ import logging
 import selenium.webdriver
 import selenium.webdriver.firefox.service
 
-# Replace with the actual MAC address of your target computer
-mac_address = "XX:XX:XX:XX:XX:XX" 
-
-options = Options()
+options = webdriver.FirefoxOptions()
 options.add_argument("--headless")
-options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Firefox(options=options)
 driver.get("https://discord.com/login")
 time.sleep(6)
 
