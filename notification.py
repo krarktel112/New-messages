@@ -1,5 +1,3 @@
-import termux
-
 def send_termux_notification(title, content):
     """Sends a system notification using Termux API."""
     try:
